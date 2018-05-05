@@ -23,7 +23,7 @@
             android:layout_height="75dp"
             android:padding="2dp"
             android:id="@+id/icon"
-            android:src="@drawable/ic_bugs"/>
+            android:src="@drawable/ic_computer"/>
 
         <TextView
             android:layout_width="wrap_content"
