@@ -21,7 +21,7 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="0dp"
                 android:background="?attr/colorPrimary"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 app:contentInsetLeft="0dp"
@@ -55,7 +55,9 @@
                     android:gravity="center"
                     android:id="@+id/titleBar"
                     android:textStyle="bold"
-                    android:textColor="@color/putih"/>
+                    android:textColor="@color/putih"
+                    android:padding="5dp"
+                    android:textSize="24sp"/>
 
             </RelativeLayout>
 
