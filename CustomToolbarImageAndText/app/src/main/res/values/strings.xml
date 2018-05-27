@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CustomToolbarImageAndText</string>
+    <string name="customToolbar">My Custom Toolbar</string>
+</resources>

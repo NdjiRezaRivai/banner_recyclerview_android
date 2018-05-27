@@ -3,85 +3,101 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_margin="16dp">
+        android:layout_height="wrap_content">
 
-
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/container"
-                android:background="@color/colorPrimaryTransparent"
-                android:layout_alignParentBottom="true"
-                android:gravity="bottom">
+                android:layout_height="170dp"
+                android:layout_margin="16dp">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/placeholder_image"
-                    android:contentDescription="@string/background_content"
-                    android:layout_marginEnd="16dp"
-                    android:id="@+id/img_background"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/container"
+                        android:background="@color/colorPrimaryTransparent"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="bottom">
 
-            <RelativeLayout
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/placeholder_image"
+                            android:contentDescription="@string/background_content"
+                            android:layout_marginEnd="16dp"
+                            android:id="@+id/img_background"/>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:id="@+id/header_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/selamat_datang_di_kios"
+                                android:textColor="@color/hitam"
+                                android:textSize="12sp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/google_play"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:textColor="@color/colorPrimary"
+                            android:text="@string/lainnya"
+                            android:textStyle="bold"
+                            android:padding="8dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/header_content">
+
+                        <include layout="@layout/list"/>
+
+                    </RelativeLayout>
+
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:id="@+id/header_content">
+                android:id="@+id/list2"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+        </LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/selamat_datang_di_kios"
-                        android:textColor="@color/hitam"
-                        android:textSize="12sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/google_play"
-                        android:textSize="12sp"/>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:textColor="@color/colorPrimary"
-                    android:text="@string/lainnya"
-                    android:textStyle="bold"
-                    android:padding="8dp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/header_content">
-
-                <include layout="@layout/list"/>
-
-            </RelativeLayout>
-
-
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
+    </ScrollView>
 
 </LinearLayout>

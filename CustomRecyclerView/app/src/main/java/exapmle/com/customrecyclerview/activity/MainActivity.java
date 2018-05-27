@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,14 +14,16 @@ import java.util.List;
 
 import exapmle.com.customrecyclerview.R;
 import exapmle.com.customrecyclerview.adapter.AdapterList;
+import exapmle.com.customrecyclerview.adapter.AdapterList2;
 import exapmle.com.customrecyclerview.model.ModelList;
+import exapmle.com.customrecyclerview.recyclerview_manager.StartSnapHelper;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView username;
     private ImageView imgProfile;
-    private RecyclerView list;
+    private RecyclerView list, list2;
     private ImageView imgContent;
     private LinearLayout Container;
     private float realDx;
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         username    = (TextView)    findViewById(R.id.username);
         imgProfile  = (ImageView)   findViewById(R.id.image_profile);
         list        = (RecyclerView)findViewById(R.id.list);
+        list2       = (RecyclerView)findViewById(R.id.list2);
         imgContent  = (ImageView)   findViewById(R.id.img_background);
         Container   = (LinearLayout)findViewById(R.id.container);
 
@@ -65,9 +69,17 @@ public class MainActivity extends AppCompatActivity {
 
         AdapterList adapterList         = new AdapterList(this, listData, list);
         LinearLayoutManager viewAdapter = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        AdapterList2 adapterList2       = new AdapterList2(this, listData, list2);
+        LinearLayoutManager viewAdapter2= new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
         list.setAdapter(adapterList);
         list.setLayoutManager(viewAdapter);
+
+        list2.setAdapter(adapterList2);
+        list2.setLayoutManager(viewAdapter2);
+
+        SnapHelper snap = new StartSnapHelper();
+        snap.attachToRecyclerView(list2);
 
     }
 
